@@ -11,31 +11,21 @@ import {
   Input,
   HStack,
   Box,
-  Wrap,
   Divider,
   Stack,
   Button,
   Image,
-  AspectRatio,
-  NumberInput,
-  NumberInputField,
   VStack,
-  FormHelperText,
   FormErrorMessage,
 } from "@chakra-ui/react";
 import arrow from "./assets/icon-arrow.svg";
 import { useEffect } from "react";
-import { Formik, useFormik } from "formik";
+import { useFormik } from "formik";
 import { ageSchema } from "./Validations/Validation";
 import { motion } from "framer-motion";
 
 function App() {
-  // console.log(date.getHours()*60*60*1000);
-  // console.log(birthDate);
   const [age, setAge] = useState({ year: null, month: null, day: null });
-  // const [day, setDay] = useState("");
-  // const [month, setMonth] = useState("");
-  // const [year, setYear] = useState("");
 
   const [dob, setDoB] = useState({
     day: "",
@@ -59,13 +49,8 @@ function App() {
           month: values.month,
           year: values.year,
         });
-        // getAge();
-        // console.log(dob);
       },
     });
-
-  // console.log(errors && errors);
-  // console.log(formik);
 
   //| Get Age
   const getAge = async () => {
@@ -99,30 +84,14 @@ function App() {
     }
   }, [dob]);
 
-  // const handleSubmit = (e) => {
-  //   console.log(e);
-  // };
-
-  // console.log(now);
-  // const ageInMil = now - birthDate;
-  // console.log(birthDate.getFullYear());
-  // const year = ageInMil / (1000 * 60 * 60 * 24 * 365.25);
-
-  // const months = year * 12;
-  // const year = ageInMil / (1000 * 60 * 60 * 24 * 365);
-  // console.log(parseInt(year));
-  // console.log(parseInt(month));
-  // console.log(parseInt(date));
-  // console.log(months);
-  // console.log(((now - birthDate.getTime()) /1000)/3600*24);
-
   return (
     <Grid
+      as="main"
       placeContent="center"
       maxW="100%"
       minH="100vh"
       // bg={{ base: "teal", sm: "red" }}
-      bg='hsl(0, 0%, 86%)'
+      bg="hsl(0, 0%, 86%)"
     >
       {/* <Text>App</Text> */}
       <Stack
@@ -275,23 +244,7 @@ function App() {
             </Button>
           </HStack>
         </Flex>
-        {/* <HStack spacing="0">
-          <Divider />
-          <Image
-            src={arrow}
-            alt="img"
-            h="4rem"
-            bg="hsl(259, 100%, 65%)"
-            p="4"
-            borderRadius="full"
-            cursor="pointer"
-            sx={{ aspectRatio: "1" }}
-            _hover={{
-              bg: "hsl(0, 0%, 8%)",
-            }}
-          />
-        </HStack> */}
-        {/* Results  */}
+        {/* Age Display  */}
         <Flex
           direction="column"
           justifyContent="start"
