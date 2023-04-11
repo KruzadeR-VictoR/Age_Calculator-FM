@@ -121,7 +121,8 @@ function App() {
       placeContent="center"
       maxW="100%"
       minH="100vh"
-      bg={{ base: "teal", sm: "red" }}
+      // bg={{ base: "teal", sm: "red" }}
+      bg='hsl(0, 0%, 86%)'
     >
       {/* <Text>App</Text> */}
       <Stack
