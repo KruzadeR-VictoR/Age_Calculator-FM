@@ -1,6 +1,7 @@
 import React from "react";
 import App from "./App";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { AnimatePresence } from "framer-motion";
 
 function Page() {
   const theme = extendTheme({
@@ -11,8 +12,8 @@ function Page() {
         // fontWeight:'normal',
         //   fontSize:".3rem",
       },
-      error:{
-        color:'hsl(0, 100%, 67%)'
+      error: {
+        color: "hsl(0, 100%, 67%)",
       },
       result: {
         fontWeight: "extraBold",
@@ -46,7 +47,9 @@ function Page() {
 
   return (
     <ChakraProvider theme={theme}>
-      <App />
+      <AnimatePresence>
+        <App />
+      </AnimatePresence>
     </ChakraProvider>
   );
 }
