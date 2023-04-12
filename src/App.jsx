@@ -253,7 +253,9 @@ function App() {
         >
           <Flex gap="1">
             <Text textStyle="result">{age.year ? age.year : "--"}</Text>
-            <Text textStyle="res_text">years</Text>
+            <Text as="h1" textStyle="res_text">
+              years
+            </Text>
           </Flex>
           <Flex gap="1">
             <Text textStyle="result">{age.month ? age.month : "--"}</Text>
